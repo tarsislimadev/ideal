@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  www:
+    image: ideal:www
+    build: './src/www'
+    volumes:
+      - './src/www:/app'
+    ports:
+      - '80:3000'
