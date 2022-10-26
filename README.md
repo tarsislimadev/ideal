@@ -1,1 +1,5 @@
-# ideal
+# Ideal
+
+## License
+
+[MIT](./LICENSE)
