@@ -18,7 +18,15 @@ Armazenamento de arquivo para armazenar e recuperar dados de qualquer local
 
 ## Como começar a usar
 
-Com o [Docker](https://www.docker.com/) instalado no Linux, execute:
+Instale o [Docker](https://www.docker.com/)
+
+Baixe o projeto
+
+```
+bash env/pull.sh
+```
+
+Execute o projeto
 
 ```
 bash env/up.sh
