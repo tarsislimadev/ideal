@@ -32,6 +32,6 @@ Execute o projeto
 bash env/up.sh
 ```
 
-## Veja mais
+## Licença
 
-[MIT license](./LICENSE)
+[MIT](./LICENSE)
