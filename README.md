@@ -4,17 +4,19 @@ Armazenamento de arquivo para armazenar e recuperar dados de qualquer local
 
 ## Como funciona
 
-- [ ] Cadastro e login
+- [ ] Landing Page
 
-- [ ] Painel de controle
+- [ ] Login and register
 
-- [ ] Registro de domínios
+- [ ] Control panel 
 
-- [ ] Gestão de projetos
+- [ ] [Storage Service](https://aws.amazon.com/s3/)
 
-- [ ] Gestão de arquivos
+- [ ] [Domain name registration](https://aws.amazon.com/route53/)
 
-- [ ] Duvidas frequentes
+- [ ] [WorkSpaces](https://aws.amazon.com/workspaces/)
+
+- [ ] [Frequently Asked Questions]()
 
 ## Como começar a usar
 
