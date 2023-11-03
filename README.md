@@ -1,39 +1,17 @@
-# Ideal
+# [Ideal]()
 
-Armazenamento de arquivo para armazenar e recuperar dados de qualquer local
+To deploy servers on demand
 
-## Como funciona
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/brtmvdl/ideal/npm-publish.yml?label=GitHub%20Actions&link=https%3A%2F%2Fgithub.com%2Fbrtmvdl%2Fideal%2Factions%2Fworkflows%2Fnpm-publish.yml)](https://github.com/brtmvdl/ideal/actions/workflows/npm-publish.yml) [![npm](https://img.shields.io/npm/dw/%40brtmvdl/ideal?label=NPM%20Weekly%20Downloads)](https://www.npmjs.com/package/@brtmvdl/ideal) [![github/stars](https://img.shields.io/github/stars/brtmvdl/ideal?style=social)](https://img.shields.io/github/stars/brtmvdl/ideal?style=social) 
 
-- [ ] Landing Page
+## social & donate
 
-- [ ] Login and register
+[Donate](https://link.mercadopago.com.br/brtmvdl) - [Telegram](https://t.me/+KRmg5MlqgMk0MTg5) - [Discord](https://discord.gg/auCmnvV2)
 
-- [ ] Control panel 
+## how to install
 
-- [ ] [Storage Service](https://aws.amazon.com/s3/)
+## how to use
 
-- [ ] [Domain name registration](https://aws.amazon.com/route53/)
-
-- [ ] [WorkSpaces](https://aws.amazon.com/workspaces/)
-
-- [ ] [Frequently Asked Questions]()
-
-## Como começar a usar
-
-Instale o [Docker](https://www.docker.com/)
-
-Baixe o projeto
-
-```
-bash env/pull.sh
-```
-
-Execute o projeto
-
-```
-bash env/up.sh
-```
-
-## Licença
+## license
 
 [MIT](./LICENSE)
