@@ -6,11 +6,11 @@ To deploy servers on demand
 
 ## social & donate
 
-[Donate](https://link.mercadopago.com.br/brtmvdl) - [Telegram](https://t.me/+KRmg5MlqgMk0MTg5) - [Discord](https://discord.gg/auCmnvV2)
-
-## how to install
+[Donate](https://link.mercadopago.com.br/brtmvdl) - [Telegram](https://t.me/+KRmg5MlqgMk0MTg5) - [Discord](https://discord.gg/2zWpWBgmPj)
 
 ## how to use
+
+register > login > dashboard > create app > build app > publish app
 
 ## license
 
