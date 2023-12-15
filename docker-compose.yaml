@@ -6,6 +6,6 @@ services:
     image: ideal:www
     build: './src/www'
     volumes:
-      - './src/www:/app'
+      - './src/www/html:/usr/share/nginx/html'
     ports:
-      - '80:3000'
+      - '8080:80'

@@ -1,7 +1,5 @@
-FROM node:lts-alpine
+FROM nginx:alpine
 
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-COPY . .
-
-CMD npm start
+COPY ./html .
