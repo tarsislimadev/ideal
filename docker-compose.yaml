@@ -9,3 +9,11 @@ services:
       - './src/www/html:/usr/share/nginx/html'
     ports:
       - '8080:80'
+
+  api:
+    image: ideal:api
+    build: './src/api'
+    volumes:
+      - './src/api:/app'
+    ports:
+      - '8000:80'

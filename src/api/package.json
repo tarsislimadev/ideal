@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node . "
+  },
+  "dependencies": {
+    "@brtmvdl/backend": "^1.0.10",
+    "@brtmvdl/database": "^1.0.2",
+    "@brtmvdl/logger": "^0.2.4"
+  }
+}
