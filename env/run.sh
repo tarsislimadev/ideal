@@ -1,1 +1,2 @@
-docker-compose run $@ bash 
+docker-compose run $@ sh 
+ 
