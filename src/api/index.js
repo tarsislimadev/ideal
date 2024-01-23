@@ -8,8 +8,6 @@ const logger = new Logger('Ideal')
 
 const server = new Server()
 
-server.router.addHeader('Access-Control-Allow-Origin', '*')
-
 server.get('/', (_, res) => res.setText('Ideal'))
 
 server.post('/api/v1/accounts/login', (_, res) => res.setJSON({ datetime: Date.now() }))
