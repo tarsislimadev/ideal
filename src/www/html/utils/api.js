@@ -45,3 +45,5 @@ const request = (method = 'GET', path = '/', headers = {}, body = {}) => new Pro
 })
 
 export const login = ({ username, password } = {}) => request('POST', ['accounts', 'login'], null, { username, password })
+
+export const register = ({ username, password, accepted } = {}) => request('POST', ['accounts', 'register'], { accepted }, { username, password })
