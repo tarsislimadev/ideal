@@ -1,6 +1,5 @@
 import { HTML, nH2, nError, nInputTextGroup, nButton, nLink } from '@brtmvdl/frontend'
 import { ButtonComponent, CheckboxGroupComponent, InputTextGroupComponent, LinkComponent, PageComponent } from '../../components/index.js'
-import * as API from '../../utils/api.js'
 import * as Flow from '../../utils/flow.js'
 import * as Local from '../../utils/local.js'
 
@@ -57,17 +56,7 @@ export class Page extends PageComponent {
 
   getRegisterButton() {
     this.children.register_button.setText('register')
-    this.children.register_button.on('click', () => {
-      this.children.error_message.setText('')
-
-      const user = this.children.user_input.children.input.getValue()
-      const pass = this.children.password_input.children.input.getValue()
-      const accepted = this.children.accepted_checkbox.getValue()
-
-      API.register({ username: user, password: pass, accepted })
-        .then(() => Flow.goTo('/'))
-        .catch((err) => console.error(err))
-    })
+    this.children.register_button.on('click', () => Flow.goTo('/pages/login/'))
 
     return this.children.register_button
   }

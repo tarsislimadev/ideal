@@ -54,17 +54,7 @@ export class Page extends PageComponent {
 
   getLoginButton() {
     this.children.login_button.setText('login')
-    this.children.login_button.on('click', () => {
-      this.children.error_message.setText('')
-
-      const user = this.children.user_input.children.input.getValue()
-      const pass = this.children.password_input.children.input.getValue()
-
-      API.login({ username: user, password: pass })
-        .then((res) => Local.set('session', res.getData()))
-        .then(() => Flow.goTo('/pages/dashboard/'))
-        .catch((err) => console.error(err))
-    })
+    this.children.login_button.on('click', () => Flow.goTo('/pages/dashboard/'))
 
     return this.children.login_button
   }
