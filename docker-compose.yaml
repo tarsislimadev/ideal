@@ -9,3 +9,7 @@ services:
       - './src/app:/app'
     ports:
       - '8000:80'
+
+  api:
+    hostname: api
+    build: './src/api'
