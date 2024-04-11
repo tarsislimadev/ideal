@@ -6,7 +6,7 @@ services:
     image: ideal
     build: './src/app'
     volumes:
-      - './src/app:/app'
+      - './src/app/html:/usr/share/nginx/html'
     ports:
       - '8000:80'
 
