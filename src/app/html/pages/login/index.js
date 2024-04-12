@@ -1,6 +1,8 @@
 import { HTML, nHr, nH2, nError } from '@brtmvdl/frontend'
-import { ButtonComponent, InputTextGroupComponent, PageComponent } from '../../components/index.js'
+import { ButtonComponent, InputTextGroupComponent, PageComponent, FormComponent, InputTextComponent } from '../../components/index.js'
 import * as Flow from '../../utils/flow.js'
+
+import { GOOGLE } from '../../google.js'
 
 export class Page extends PageComponent {
   children = {
@@ -35,7 +37,22 @@ export class Page extends PageComponent {
   }
 
   getGoogleButton() {
-    return this.createFlowButton('google', () => Flow.goTo('?google=1'))
+    return this.createFlowButton('google', () => {
+      const form = new FormComponent()
+      form.setAttr('method', 'GET')
+      form.setAttr('action', GOOGLE.auth_uri)
+      this.append(form)
+
+      Object.keys(GOOGLE).filter((key) => (typeof GOOGLE[key]) === 'string').map((key) => {
+        const input = new InputTextComponent()
+        input.setAttr('type', 'hidden')
+        input.setAttr('name', key)
+        input.setValue(GOOGLE[key])
+        form.append(input)
+      })
+
+      form.submit()
+    })
   }
 
   getGitlabButton() {
