@@ -11,3 +11,5 @@ export * from './input-text.js'
 export * from './checkbox-group.js'
 
 export * from './checkbox.js'
+
+export * from './form.js'
