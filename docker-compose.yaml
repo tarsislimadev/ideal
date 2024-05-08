@@ -13,3 +13,5 @@ services:
   api:
     hostname: api
     build: './src/api'
+    volumes:
+      - './src/api:/app'
