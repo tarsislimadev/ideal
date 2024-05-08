@@ -6,7 +6,7 @@ export const goTo = (page, data = null) => {
   (window.location = page)
 }
 
-export const getLocalAccessToken = Local.getSync(['access_token'])
+export const getLocalAccessToken = () => Local.getSync(['access_token'])
 
 export const getUrlAccessToken = () => {
   const url = new URL(window.location)
