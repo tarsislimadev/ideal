@@ -34,8 +34,6 @@ class ErrorResponse extends Response {
 const request = (method = 'GET', path = '/', headers = {}, body = {}) => new Promise((s, f) => {
   const xhr = new XMLHttpRequest()
   xhr.open(method, [config.BASE_URL, ...path].join('/'), true)
-  xhr.setRequestHeader('Access-Control-Allow-Origin', '*')
-  xhr.setRequestHeader('Access-Control-Allow-Headers', '*')
   Array.from((headers || [])).map(([key, value = '']) => xhr.setRequestHeader(key, value))
 
   const onComplete = () => xhr.status === 200 ? s(new SuccessResponse(xhr)) : f(new ErrorResponse(xhr))
@@ -49,3 +47,5 @@ const request = (method = 'GET', path = '/', headers = {}, body = {}) => new Pro
 export const login = ({ username, password } = {}) => request('POST', ['accounts', 'login'], null, { username, password })
 
 export const register = ({ username, password, accepted } = {}) => request('POST', ['accounts', 'register'], [], { username, password })
+
+export const dashboard = () => request('GET', ['dashboard'])
