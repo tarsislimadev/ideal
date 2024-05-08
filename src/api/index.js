@@ -1,15 +1,15 @@
-import { Server } from '@brtmvdl/backend'
+import { Server } from 'express'
 
 import { Database } from '@brtmvdl/database'
 
-const server = new Server()
-
 const db = new Database({ type: 'fs', config: '/data' })
 
-const setHeaders = (res, json = {}) => res.setJSON(json).setHeader('Access-Control-Allow-Origin', '*')
+const setHeaders = (res, error = null, json = {}) => res.setJSON(json).setHeader('Access-Control-Allow-Origin', '*')
 
-server.get('/', (_, res) => setHeaders(res, { id: Date.now() }))
+const server = new Server()
 
-server.get('/dashboard', (_, res) => setHeaders(res, { list: [Date.now()] }))
+server.get('/', (_, res) => setHeaders(res, null, { id: Date.now() }))
+
+server.get('/dashboard', (_, res) => setHeaders(res, null, { projects: [Date.now()] }))
 
 server.listen(80)
