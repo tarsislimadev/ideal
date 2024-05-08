@@ -3,7 +3,6 @@ version: '3'
 services:
 
   app:
-    image: ideal
     build: './src/app'
     volumes:
       - './src/app/html:/usr/share/nginx/html'
@@ -15,5 +14,6 @@ services:
     build: './src/api'
     volumes:
       - './src/api:/app'
+      - './data:/data'
     ports:
       - '8080:80'
