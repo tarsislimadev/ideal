@@ -1,13 +1,33 @@
 import { HTML, nHr, nH2, nError } from '@brtmvdl/frontend'
 import { ButtonComponent, InputTextGroupComponent, PageComponent, FormComponent, InputTextComponent } from '../../components/index.js'
 import * as Flow from '../../utils/flow.js'
-
+import * as Local from '../../utils/local.js'
 import { GOOGLE } from '../../google.js'
 
 export class Page extends PageComponent {
   children = {
     error_message: new nError(),
     email_input: new InputTextGroupComponent(),
+  }
+
+  onCreate() {
+    super.onCreate()
+    if (this.hasAccessToken()) {
+      Local.set(['google.access_token'], this.getAccessToken())
+      Flow.goTo('/?access_token=1')
+    } else {
+      console.log('no access token')
+    }
+  }
+
+  hasAccessToken() {
+    return !!this.getAccessToken()
+  }
+
+  getAccessToken() {
+    const url = new URL(window.location)
+    const access_token = new URLSearchParams(url.hash.substring(1))
+    return access_token.get('access_token')
   }
 
   getContent() {
