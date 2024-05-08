@@ -6,12 +6,10 @@ const server = new Server()
 
 const db = new Database({ type: 'fs', config: '/data' })
 
-server.get('/', (_, res) => {
-  return res.setJSON({ id: Date.now() })
-})
+const setHeaders = (res, json = {}) => res.setJSON(json).setHeader('Access-Control-Allow-Origin', '*')
 
-server.get('/dashboard', (_, res) => {
-  return res.setJSON({ id: Date.now() })
-})
+server.get('/', (_, res) => setHeaders(res, { id: Date.now() }))
+
+server.get('/dashboard', (_, res) => setHeaders(res, { list: [Date.now()] }))
 
 server.listen(80)
