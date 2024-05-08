@@ -13,7 +13,7 @@ export class Page extends PageComponent {
   onCreate() {
     super.onCreate()
     if (this.hasAccessToken()) {
-      Local.set(['google.access_token'], this.getAccessToken())
+      Local.setSync(['access_token'], this.getAccessToken())
       Flow.goTo('/?access_token=1')
     } else {
       console.log('no access token')
@@ -25,9 +25,7 @@ export class Page extends PageComponent {
   }
 
   getAccessToken() {
-    const url = new URL(window.location)
-    const access_token = new URLSearchParams(url.hash.substring(1))
-    return access_token.get('access_token')
+    return Flow.getLocalAccessToken() || Flow.getUrlAccessToken()
   }
 
   getContent() {
@@ -37,8 +35,6 @@ export class Page extends PageComponent {
     form.append(this.createH2('Login'))
     form.append(this.getErrorMessage())
     form.append(this.getGoogleButton())
-    form.append(this.getGitlabButton())
-    form.append(this.getBitBucketButton())
     form.append(this.getHr())
     form.append(this.getEmailInput())
     form.append(this.getLoginButton())
@@ -73,14 +69,6 @@ export class Page extends PageComponent {
 
       form.submit()
     })
-  }
-
-  getGitlabButton() {
-    return this.createFlowButton('gitlab', () => Flow.goTo('?gitlab=1'))
-  }
-
-  getBitBucketButton() {
-    return this.createFlowButton('bitbucket', () => Flow.goTo('?bitbucket=1'))
   }
 
   getHr() {
