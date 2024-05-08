@@ -1,5 +1,7 @@
 // 
 
-export const set = (key, value = '') => new Promise((s) => s(localStorage.setItem((key), JSON.stringify(value))))
+const getName = (names = []) => Array.from(names).join('.')
 
-export const get = (key, def = null) => Promise.resolve(null) // 
+export const setSync = (key = [], value = '') => localStorage.setItem(getName(key), JSON.stringify(value))
+
+export const getSync = (key = [], def = null) => localStorage.getItem(getName(key)) || def
