@@ -6,7 +6,8 @@
     "start": "node ./index.js"
   },
   "dependencies": {
-    "@brtmvdl/backend": "^1.0.14",
-    "@brtmvdl/database": "^1.0.2"
+    "@brtmvdl/database": "^1.0.2",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
   }
 }
