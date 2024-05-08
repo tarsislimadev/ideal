@@ -1,16 +1,20 @@
 import { HTML, nFlex, nLink } from '@brtmvdl/frontend'
-
 import { LinkComponent } from './link.js'
+import * as Flow from '../utils/flow.js'
 
 export class HeaderComponent extends HTML {
   onCreate() {
-    this.append(this.getFlex())
+    this.append(this.isGuest() ? this.getGuest() : this.getAuth())
   }
 
-  getFlex() {
+  isGuest() {
+    return !Flow.getLocalAccessToken() && !Flow.getUrlAccessToken()
+  }
+
+  getGuest() {
     const flex = new nFlex()
     flex.append(this.getLeft())
-    flex.append(this.getRight())
+    flex.append(this.getRightGuest())
     return flex
   }
 
@@ -26,11 +30,26 @@ export class HeaderComponent extends HTML {
     return this.createLink('/', 'ideal')
   }
 
-  getRight() {
+  getRightGuest() {
     const right = new nFlex()
     right.append(this.createLink('/pages/pricing/', 'pricing'))
     right.append(this.createLink('/pages/about-us/', 'about us'))
     right.append(this.createLink('/pages/login/', 'login'))
     return right
   }
+
+  getAuth() {
+    const flex = new nFlex()
+    flex.append(this.getLeft())
+    flex.append(this.getRightAuth())
+    return flex
+  }
+
+  getRightAuth() {
+    const right = new nFlex()
+    right.append(this.createLink('/pages/dashboard/', 'dashboard'))
+    right.append(this.createLink('/pages/logout/', 'logout'))
+    return right
+  }
+
 }
